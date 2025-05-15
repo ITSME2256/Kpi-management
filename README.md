@@ -42,7 +42,7 @@
 ### 1. Clone โปรเจกต์
 
 ```bash
-git clone https://github.com/yourusername/kpi-management.git
+git clone https://github.com/ITSME2256/Kpi-management.git
 cd kpi-management
 
 ##ตั้งค่า Backend
@@ -51,7 +51,7 @@ npm install
 สร้างไฟล์ .env แล้วใส่
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/kpi-management
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=ความลับสำหรับสร้างJWT
 แล้วรัน
 npm run dev
 
