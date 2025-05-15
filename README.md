@@ -59,6 +59,7 @@ npm run dev
 cd ../frontend
 npm install
 npm run dev
+จะได้หน้าเว็บที่ http://localhost:5173
 
 ##API ที่ใช้
 | Method | Endpoint            | ใช้ทำอะไร                      |
@@ -71,3 +72,8 @@ npm run dev
 | PUT    | `/kpi/edit/:id`     | แก้ไข KPI                      |
 | PUT    | `/kpi/update/:id`   | อัปเดตค่าผลลัพธ์ (actualValue) |
 | DELETE | `/kpi/delete/:id`   | ลบ KPI                         |
+
+##รหัสตัวอย่างที่ใช้ Login
+test@example.com รหัส 123456
+test2@example.com รหัส 123456
+testAdmin@example.com รหัส 123456
