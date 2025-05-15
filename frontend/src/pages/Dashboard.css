@@ -1,0 +1,132 @@
+.dashboard {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .kpi-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .kpi-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3f51b5;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .kpi-item p {
+    margin: 4px 0;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  /* .kpi-item button {
+    margin-top: 0.5rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .kpi-item button:hover {
+    background-color: #d32f2f;
+  } */
+  .dashboard button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .dashboard button:hover {
+    opacity: 0.9;
+  }
+  .edit-btn {
+    margin-top: 0.5rem;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  .edit-btn:hover {
+    background-color: #f57c00;
+  }
+  
+  .delete-btn {
+    margin-top: 0.5rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  .status-label {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .status-label.OnTrack {
+    background-color: #4caf50; /* เขียว */
+  }
+  
+  .status-label.AtRisk {
+    background-color: #ff9800; /* ส้ม */
+  }
+  
+  .status-label.OffTrack {
+    background-color: #f44336; /* แดง */
+  }
+  .update-btn {
+    margin-top: 0.5rem;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  .update-btn:hover {
+    background-color: #1976d2;
+  }
+  .export-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+  .export-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  
