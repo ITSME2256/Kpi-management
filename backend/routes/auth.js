@@ -75,4 +75,28 @@ router.get("/userInfo", verifyToken, (req, res) => {
     });
 });
 
+router.post('/addByadmin', verifyToken, async (req, res) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ ข้อความ: 'คุณไม่มีสิทธิ์สร้างผู้ใช้' });
+    }
+
+    const { username, email, password, role } = req.body;
+
+    try {
+        const userExists = await User.findOne({ email });
+        if (userExists) {
+            return res.status(400).json({ ข้อความ: 'อีเมลนี้ถูกใช้ไปแล้ว' });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const newUser = new User({ username, email, password: hashedPassword, role: role || 'user' });
+        await newUser.save();
+
+        res.status(201).json({ ข้อความ: 'สร้างผู้ใช้สำเร็จโดยแอดมิน' });
+    } catch (error) {
+        res.status(500).json({ ข้อความ: 'เกิดข้อผิดพลาด', error: error.message });
+    }
+});
+  
+
 module.exports = router;

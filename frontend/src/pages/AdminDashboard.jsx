@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import './Dashboard.css';
 import { unparse } from 'papaparse';
+import AdminAddUser from './AdminAddUser'; // ✅ เพิ่ม import
 
 function AdminDashboard({ onLogout }) {
     const [kpis, setKpis] = useState([]);
     const [loading, setLoading] = useState(true);
     const [ข้อความ, setข้อความ] = useState('');
+    const [showAddUser, setShowAddUser] = useState(false); // ✅ เพิ่ม useState
 
     const fetchAllKpis = async () => {
         try {
@@ -68,10 +70,10 @@ function AdminDashboard({ onLogout }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2>Admin: รายการ KPI ทั้งหมด</h2>
                 <div>
-                    <button
-                        onClick={handleExportCSV}
-                        style={{ backgroundColor: '#4caf50', color: 'white', marginRight: '1rem' }}
-                    >
+                    <button onClick={() => setShowAddUser(true)} style={{ backgroundColor: '#2196f3', color: 'white', marginRight: '1rem' }}>
+                        ➕ เพิ่มผู้ใช้
+                    </button>
+                    <button onClick={handleExportCSV} style={{ backgroundColor: '#4caf50', color: 'white', marginRight: '1rem' }}>
                         📥 Export CSV
                     </button>
                     <button onClick={onLogout} style={{ backgroundColor: '#f44336', color: 'white' }}>
@@ -80,7 +82,19 @@ function AdminDashboard({ onLogout }) {
                 </div>
             </div>
 
-            {loading ? (
+            {showAddUser ? (
+                <>
+                    <AdminAddUser
+                        onSuccess={() => {
+                            setShowAddUser(false);
+                            fetchAllKpis(); // ถ้าต้องการรีเฟรช KPI
+                        }}
+                    />
+                    <button onClick={() => setShowAddUser(false)} style={{ marginTop: '1rem' }}>
+                        ❌ ยกเลิก
+                    </button>
+                </>
+            ) : loading ? (
                 <p>กำลังโหลดข้อมูล...</p>
             ) : ข้อความ ? (
                 <p className="error">{ข้อความ}</p>
