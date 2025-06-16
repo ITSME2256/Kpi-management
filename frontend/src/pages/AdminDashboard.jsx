@@ -70,7 +70,7 @@ function AdminDashboard({ onLogout }) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2>Admin: รายการ KPI ทั้งหมด</h2>
                 <div>
-                    <button onClick={() => setShowAddUser(true)} style={{ backgroundColor: '#2196f3', color: 'white', marginRight: '1rem' }}>
+                    <button onClick={() => setShowAddUser(true)} style={{ backgroundColor: '#2196f3', color: 'white', marginRight: '1rem',border:0 }}>
                         ➕ เพิ่มผู้ใช้
                     </button>
                     <button onClick={handleExportCSV} style={{ backgroundColor: '#4caf50', color: 'white', marginRight: '1rem' }}>
